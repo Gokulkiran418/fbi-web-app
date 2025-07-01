@@ -1,11 +1,15 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true, // Enables React strict mode for better error detection
+  reactStrictMode: true,
   images: {
-    domains: ['www.fbi.gov'], // Allow FBI API image domains
-    // Add Cloudinary/Imgix domains if used in production
-    // Example: domains: ['www.fbi.gov', 'res.cloudinary.com', 'images.imgix.net'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.fbi.gov',
+        pathname: '/wanted/**', // Match FBI Wanted API image paths
+      },
+    ],
   },
 };
 
