@@ -13,8 +13,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".", // Added for cleaner imports
+    "noUnusedLocals": true, // Catch unused variables
+    "noUnusedParameters": true, // Catch unused function parameters
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"] // Default alias, works with our structure
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
